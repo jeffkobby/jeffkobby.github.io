@@ -1,0 +1,133 @@
+@import url(https://fonts.googleapis.com/css?family=Lexend+Deca:regular);
+@import url(https://fonts.googleapis.com/css?family=Big+Shoulders+Display:100,300,regular,500,600,700,800,900);
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: hsl(0, 0%, 95%);
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* layout */
+.container{
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.column{
+    padding: 3rem;
+}
+
+.column-body{
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.column-one{
+    background-color: hsl(31, 77%, 52%);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.column-two{
+    background-color: hsl(184, 100%, 22%);
+}
+
+.column-three{
+    background-color: hsl(179, 100%, 13%);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.learn-more{
+    display: inline-block;
+    text-decoration: none;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    margin-top: 1.5rem;
+    border-radius: 15px;
+    background-color: hsl(0, 0%, 95%);
+    transition: 1s all ease;
+    
+}
+
+.learn-more:hover,
+.learn-more:focus{
+    transform: scale(1.05);
+}
+
+/* Typography */
+.column-content,
+.learn-more{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.column-content{
+    color: hsla(0, 0%, 100%, 0.75);
+    line-height: 1.6;
+}
+
+.column-title{
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    color: hsl(0, 0%, 95%)
+}
+
+.column-one .learn-more{
+    color: hsl(31, 77%, 52%);
+}
+
+.column-two .learn-more{
+    color: hsl(184, 100%, 22%);
+}
+
+.column-three .learn-more{
+    color: hsl(179, 100%, 13%);
+}
+
+/* Media Queries */
+@media (min-width:767px){
+    .container{
+        flex-direction: row;
+    }
+
+    .column-content{
+        max-width: 250px;
+    }
+
+    .column-one,
+    .column-three{
+        border-radius: unset;
+    }
+
+    .column-one{
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .column-three{
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .column-footer{
+        margin-top: 5rem;
+    }
+}
+
+
+
+
