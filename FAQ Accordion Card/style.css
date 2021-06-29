@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*,
+*::after,
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-primary: hsl(273, 75%, 66%);
+    --bg-secondary: hsl(240, 73%, 65%);
+    --color-active: hsl(14, 88%, 65%);
+    --color-primary: hsl(238, 29%, 16%);
+    --color-neutral-primary: hsl(237, 12%, 33%);
+    --color-neutral-secondary: hsl(240, 6%, 50%);
+    --color-border: hsl(240, 5%, 91%);
+    --ff-primary: 'Kumbh Sans', sans-serif;
+    --ff-size: 12px;
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+    background-repeat: no-repeat;
+    font-family: var(--ff-primary);
+    font-size: var(--ff-size);
+    
+}
+
+.card{
+    background-color: whitesmoke;
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center 0%;
+    background-size: 15rem;
+    border-radius: 2rem;
+    width: 90%;
+    height: auto;
+    max-width: 900px;
+    margin: 7rem 0;
+}
+
+.card__img{
+    position: relative;
+}
+
+.card__img img{
+    position: absolute;
+    width: 100%;
+    max-width: 15rem;
+    height: auto;
+    top: -3.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mobile-image{
+    display: block;
+    margin-top: -10%;
+}
+
+.desktop-image,
+.card__box{
+    display: none;
+}
+
+.card__text{
+    padding: 7rem 1.5rem 3rem 1.5rem;
+
+}
+
+/* typography */
+.title{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: .875em;
+}
+
+/* accordion */
+.accordion__item{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.accordion__item--header{
+    margin-bottom: 0;
+}
+
+.accordion__question{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--ff-primary);
+    font-size: 0.85rem;
+    font-weight: var(--fw-regular);
+    color: var(--color-neutral-primary);
+    border: none;
+    padding: 0;
+    background: transparent;
+    text-align: left;
+}
+
+.accordion__question::after{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 1rem;
+    background-image: url(images/icon-arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-left: 1em;
+    transition: transform 100ms ease;
+}
+
+.accordion__question:active{
+    color: var(--color-active);
+}
+
+
+
+.accordion__question.open{
+    font-weight: var(--fw-bold);
+    color: var(--color-primary);
+}
+
+.accordion__question.open::after{
+    transform: rotate(180deg);
+}
+
+.accordion__collapse.collapse{
+    display: none;
+}
+
+.accordion__collapse.open{
+    display: block;
+}
+
+.accordion__body{
+    color: var(--color-neutral-secondary);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    padding-right: 2em;
+    margin-top: 1em; 
+}
+
+
+/* SMALL PHONES */
+@media (max-width: 350px){
+    .accordion__question{
+        font-size: 0.75rem;
+    }
+
+    .accordion__body{
+        font-size: 0.65rem;
+    }
+
+    .card__img img{
+        max-width: 12rem;
+        top: -2.8rem;
+    }
+
+    .card{
+        background-size: 12rem;
+    }
+}
+
+/* ADJUSTMENTS FOR TABLETS */
+@media (min-width: 500px){
+    .card__img img{
+        top: -3rem;
+    }
+}
+
+
+/* DESKTOP STYLING */
+@media (min-width: 650px){
+
+body{
+    height: 100vh;
+}
+.card{
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: -13% center;
+    padding: 70px 100px 70px 0;
+    padding-right: 2rem;
+}
+
+.card__img,
+.card__text{
+    flex: 1;
+}
+
+.card__img{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card__img img{
+    position: relative;
+    top: auto;
+    left: auto;
+    max-width: 25rem;
+    transform: translateX(-4rem);
+}
+
+.desktop-image{
+    display: block;
+}
+
+.mobile-image{
+    display: none;
+}
+
+.card__box{
+    display: block;
+    width: 20%;
+    position: absolute;
+    left: 0;
+    top: 63%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+
+}
+
+.card__text{
+    padding-top: 0;
+}
+
+}
+
+
+
