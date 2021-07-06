@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --color-desaturated-red: hsl(0, 36%, 70%);
+    --color-soft-red: hsl(0, 93%, 68%);
+    --color-dark-grayish-red: hsl(0, 6%, 24%);
+    --linear-gradient-light: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --linear-gradient-heavy: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    --font-family: 'Josefin Sans', sans-serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-bold: 600;
+}
+
+body,html{
+    font-family: var(--font-family);
+    
+}
+
+body{
+    margin: 0;
+    text-align: center;
+    height: 100vh;  
+}
+
+/* Container Styling */
+.container{
+    padding-bottom: 5.625rem;
+    background: var(--linear-gradient-light);
+}
+
+.container__header--logo{
+    padding: 1.875rem;
+    text-align: left;
+}
+
+.container__header--image{
+    height: 275px;
+    background-image: url(images/hero-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container__main{
+    margin-top: 4.0625rem;
+    padding: 0 2.5rem;
+}
+
+.container__main--title{
+    font-size: 2rem;
+    width: 225px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.75rem;
+    margin-bottom: 1.875rem;
+    line-height: 1.2;
+    
+}
+
+.container__main--title span{
+    display: block;
+    color: var(--color-desaturated-red);
+    font-weight: var(--font-weight-light);
+}
+
+.container__main--text{
+    font-size: .875rem;
+    font-weight: var(--font-weight-regular);
+    color: var(--color-desaturated-red);
+    line-height: 1.5;   
+    
+}
+
+.container__form{
+    padding: 0 1.875rem;
+    margin-top: 1.875rem;
+}
+
+.container__main--form{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.container__main--form input{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid var(--color-desaturated-red);
+    outline: none;
+    color: var(--color-desaturated-red);
+    background-color: var(--linear-gradient-light);
+    margin-bottom: .5rem;
+}
+
+.container__main--form input:active,
+.container__main--form input:focus{
+    background-color: var(--linear-gradient-light);
+}
+
+.container__main--form input::placeholder{
+    color: var(--color-desaturated-red);
+    font-weight: var(--font-weight-light);
+}
+
+.container__main--form button{
+    background-image: var(--linear-gradient-heavy);
+    padding: .85rem 1.5rem;
+    border-radius: 2rem;
+    position: absolute;
+    right: -5%;
+    border: 0;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+
+.container__main--form button:hover{
+    box-shadow: 0px 3px 3px var(--color-dark-grayish-red);
+}
+
+.form__email--eror{
+    position: absolute;
+    top: 25%;
+    right: 17%;
+}
+
+.input-error-border{
+    border: 1px solid var(--color-soft-red);
+}
+
+.status-text{
+    color: var(--color-soft-red);
+    margin: 0;
+}
+
+.hidden{
+    visibility: collapse;
+}
+
+/* Media Queries */
+@media (max-width: 320px) {
+    .container__main--form input{
+        padding: .7rem;
+    }
+
+    .container__main--form button{
+        padding: .55rem 1.15rem; 
+        right: -3%;
+    }
+
+    .form__email--eror{
+        right:20%;
+        top: 20%;
+    }
+}
+
+@media (min-width:500px) {
+    .container__header--image{
+        height: 350px;
+    }
+
+    .container__main--form button{
+        right: -3%;
+    }
+
+    .form__email--eror{
+        position: absolute;
+        top: 25%;
+        right: 12%;
+    }
+    
+}
+
+@media (min-width: 750px) {
+    .container{
+        display: grid;
+        background: url(images/bg-pattern-desktop.svg);
+        background-size: cover;
+        background-position: center;
+        padding-bottom: 0;
+        grid-template-columns: 60% 40%;
+        height: 100%;
+        grid-template-areas: 'header image'
+                             'main   image'
+                             'form   image';
+    }
+
+    .container__header--logo{
+        grid-area: header;
+        padding: 3.75rem 0 0 4.3125rem;
+    }
+
+    .container__header--image{
+        grid-area: image;
+        background-image: url(images/hero-desktop.jpg);
+        background-position-x: center;
+        height: 100%;
+    }
+
+    .container__main{
+        grid-area: main;
+        padding-left: 4.3125rem;
+    }
+
+    .container__main--title{
+        font-size: 3.5rem;
+        margin: 0;
+    }
+
+    .container__main--text{
+        text-align: left;
+        font-size: 1rem;
+        max-width: 430px;
+
+    }
+
+    .container__form{
+        grid-area: form;
+        padding-left: 4.3125rem;
+        margin: 0;
+        justify-self: left;
+        
+    }
+
+    .container__main--form input{
+        width: 350px;
+    }
+
+    .container__main--form button{
+        right: -2%;
+        padding: .9rem 1.5rem;
+    }
+
+    .form__email--eror{
+        right: 20%;
+    }
+
+    .status-text{
+        text-align: left;
+        padding-left: 1rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container__main--form input{
+        width: 430px;
+    }
+
+    .container__main--form button{
+        right: -2%;
+        padding: .85rem 2rem;
+    }
+
+    .form__email--eror{
+        right: 18%;
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .container__header--logo{
+        grid-area: header;
+        padding: 3.75rem 0 0 10.3125rem;
+    }
+
+    .container__header--image{
+        grid-area: image;
+        background-image: url(images/hero-desktop.jpg);
+        background-position-x: center;
+        height: 100%;
+    }
+
+    .container__main{
+        grid-area: main;
+        padding-left: 10.3125rem;
+    }
+
+    .container__main--title{
+        font-size: 3.5rem;
+        margin: 0;
+    }
+
+    .container__main--text{
+        text-align: left;
+        font-size: 1rem;
+        max-width: 430px;
+
+    }
+
+    .container__form{
+        grid-area: form;
+        padding-left: 10.3125rem;
+        margin: 0;
+        justify-self: left;
+        
+    }
+
+    .container__main--form input{
+        width: 430px;
+    }
+
+    .container__main--form button{
+        right: -5%;
+        padding: .85rem 2rem;
+    }
+
+    .form__email--eror{
+        right: 15%;
+    }
+
+ 
+
+}
