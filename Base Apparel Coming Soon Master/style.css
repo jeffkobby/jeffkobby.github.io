@@ -108,6 +108,7 @@ body{
 .container__main--form input::placeholder{
     color: var(--color-desaturated-red);
     font-weight: var(--font-weight-light);
+    font-family: var(--font-family);
 }
 
 .container__main--form button{
@@ -216,7 +217,7 @@ body{
 
     .container__main--text{
         text-align: left;
-        font-size: 1rem;
+        font-size: 1.25rem;
         max-width: 430px;
         line-height: 2;
 
@@ -290,7 +291,7 @@ body{
 
     .container__main--text{
         text-align: left;
-        font-size: 1rem;
+        font-size: 1.25rem;
         max-width: 430px;
 
     }
