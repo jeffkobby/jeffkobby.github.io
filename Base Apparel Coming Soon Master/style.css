@@ -98,6 +98,7 @@ body{
     color: var(--color-desaturated-red);
     background-color: var(--linear-gradient-light);
     margin-bottom: .5rem;
+    font-family: var(--font-family);
 }
 
 .container__main--form input:active,
@@ -106,9 +107,9 @@ body{
 }
 
 .container__main--form input::placeholder{
+    font-family: var(--font-family);
     color: var(--color-desaturated-red);
     font-weight: var(--font-weight-light);
-    font-family: var(--font-family);
 }
 
 .container__main--form button{
