@@ -7,13 +7,7 @@ const statusText = document.querySelector('.status-text')
 
 form.addEventListener('submit', (event) =>{
     event.preventDefault()
-    setInterval(() => {
-        checkEmail()
-        clearInterval()
-    }, 100);
-
-    
-    
+        checkEmail()  
 })
 
 
@@ -28,6 +22,7 @@ const isEmailValid = (email) => {
     return re.test(String(email).toLowerCase());
 };
 
+// function to display input error messages
 const showError = (message) =>{
     inputEmail.classList.toggle('input-error-border')
     statusText.classList.toggle('hidden')
@@ -44,6 +39,7 @@ const setSuccess = () =>{
     inputEmail.value = ""
 }
 
+// function to user input
 const checkEmail = () =>{
     let valid = false
     const emailValue = inputEmail.value.trim()
