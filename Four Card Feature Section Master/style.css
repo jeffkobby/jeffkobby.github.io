@@ -124,7 +124,7 @@ main{
 
     .main{
         display: grid;
-        grid-gap: 1rem;
+        grid-gap: 2rem;
         position: relative;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: '. team-builder .'
